@@ -1,7 +1,12 @@
-const myName: string = "Bruce Willis";
+import http from "http";
 
-const say_my_name = (name: string) => {
-    console.log(`Hello, ${name}`);
-};
+const server = http.createServer((req, res) => {
+    console.log("i accepted something");
 
-say_my_name(myName);
+    res.writeHead(200, "OK", {
+        "content-type": "text/html",
+    });
+    res.end("fin");
+});
+
+server.listen(3000);
