@@ -1,7 +1,9 @@
-const myName = "Anton Chistik";
-const say_my_name = (name) => {
-    console.log(`Hello, ${name}`);
-};
-say_my_name(myName);
-export {};
+import http from "http";
+const server = http.createServer((req, res) => {
+    console.log("i accepted something");
+    res.writeHead(200, "OK", {
+        "content-type": "text/html",
+    });
+    res.end("fin");
+});
 //# sourceMappingURL=index.js.map

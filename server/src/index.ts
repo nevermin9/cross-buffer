@@ -6,7 +6,6 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, "OK", {
         "content-type": "text/html",
     });
+    
     res.end("fin");
 });
-
-server.listen(3000);
