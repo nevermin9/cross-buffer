@@ -1,11 +1,4 @@
-import http from "http";
+import { config } from "./config";
+import { getServer } from "./server/http";
 
-const server = http.createServer((req, res) => {
-    console.log("i accepted something");
-
-    res.writeHead(200, "OK", {
-        "content-type": "text/html",
-    });
-    
-    res.end("fin");
-});
+const server = getServer({}, config);

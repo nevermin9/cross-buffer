@@ -72,6 +72,15 @@ importers:
         specifier: ^4.5.4
         version: 4.5.4(@types/node@22.15.21)(rollup@4.41.0)(typescript@5.8.3)(vite@6.3.5(@types/node@22.15.21)(tsx@4.19.4))
 
+  libs/route-matcher:
+    devDependencies:
+      '@types/node':
+        specifier: ^22.15.21
+        version: 22.15.21
+      typescript:
+        specifier: ^5.8.3
+        version: 5.8.3
+
   server:
     devDependencies:
       '@types/node':
