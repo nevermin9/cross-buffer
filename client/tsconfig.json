@@ -1,4 +1,14 @@
 {
+    "extends": "../tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": ".",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["src/*"],
+            "@libs/*": ["../libs/*"]
+        }
+    },
     "files": [],
     "references": [
         { "path": "./tsconfig.app.json" },
