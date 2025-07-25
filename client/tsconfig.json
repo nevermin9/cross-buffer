@@ -8,8 +8,8 @@
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"],
-            "@libs/*": ["../libs/*"]
-        }
+        },
+        "outDir": "./dist",
     },
     "files": [],
     "include": [],

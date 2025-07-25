@@ -1,5 +1,9 @@
 <script setup lang="ts">
 import { RouterView } from "vue-router";
+import { useDarkTheme } from "@/composition/use-dark-theme";
+
+const { init, toggleTheme } = useDarkTheme();
+init();
 </script>
 
 <template>
@@ -13,6 +17,14 @@ import { RouterView } from "vue-router";
                 </li>
             </ul>
         </nav>
+
+
+            <button
+                type="button"
+                @click="() => toggleTheme()"
+            >
+                Toggle theme
+            </button>
     </header>
 
     <main class="flex-auto">

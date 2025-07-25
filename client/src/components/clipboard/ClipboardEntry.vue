@@ -22,7 +22,7 @@ const deleteEntry = () => {
         <div>
             <textarea
                 v-model="entry"
-                class="resize-vertical"
+                class="bg-white dark:bg-black text-slate-950 disabled:text-slate-600 resize-vertical disabled:resize-none"
                 :disabled="!isEditing"
             ></textarea>
         </div>
