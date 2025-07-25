@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import ClipboardEntry from "@/components/clipboard/ClipboardEntry.vue";
 
 const userName = ref("John Doe");
 const lastClipboardEntries = ref([
-    "Entry 1",
-    "Entry 2",
-    "Entry 3",
+    {
+        content: "Hello world!",
+    },
+    {
+        content: "Chao, chao!",
+    }
 ]);
 </script>
 
@@ -21,8 +25,11 @@ const lastClipboardEntries = ref([
             </h3>
 
             <ul>
-                <li v-for="entry in lastClipboardEntries">
-                    {{ entry }}
+                <li
+                    v-for="(entry, i) in lastClipboardEntries"
+                    :key="Symbol(i)"
+                >
+                    <ClipboardEntry :content="entry.content" />
                 </li>
             </ul>
         </article>

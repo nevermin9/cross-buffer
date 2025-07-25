@@ -1,8 +1,10 @@
 {
     "extends": "../tsconfig.base.json",
     "compilerOptions": {
-        "outDir": "./dist",
+        "allowJs": true,
+        "resolveJsonModule": true,
         "rootDir": ".",
+        "verbatimModuleSyntax": true,
         "baseUrl": ".",
         "paths": {
             "@/*": ["src/*"],
@@ -10,6 +12,7 @@
         }
     },
     "files": [],
+    "include": [],
     "references": [
         { "path": "./tsconfig.app.json" },
         { "path": "./tsconfig.node.json" }
