@@ -19,17 +19,18 @@ const deleteEntry = () => {
 </script>
 
 <template>
-    <div class="flex flex-col">
+    <div class="flex flex-col rounded-xl bg-white dark:bg-black">
         <div class="flex-1">
             <textarea
                 v-model="entry"
-                class="w-full bg-white dark:bg-black text-slate-950 disabled:text-slate-600 resize-vertical disabled:resize-none"
+                class="w-full text-slate-950 disabled:text-slate-600 resize-vertical disabled:resize-none"
                 :disabled="!isEditing"
             ></textarea>
         </div>
 
-        <div>
+        <div class="text-slate-800">
             <button
+                class="cursor-pointer"
                 type="button"
                 @click="isEditing = !isEditing"
             >

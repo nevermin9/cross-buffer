@@ -23,12 +23,16 @@ export const useDarkTheme = () => {
     };
 
     const toggleTheme = () => {
-        if (currentTheme.value === DARK_THEME) {
+        const current = currentTheme.value;
+        if (current === DARK_THEME) {
             currentTheme.value = DEFAULT_THEME;
         } else {
             currentTheme.value = DARK_THEME;
         }
-        document.documentElement.classList.toggle(DARK_THEME);
+        if (current) {
+            document.documentElement.classList.remove(current);
+        }
+        document.documentElement.classList.add(currentTheme.value);
     };
 
     return {
