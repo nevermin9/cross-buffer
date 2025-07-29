@@ -2,7 +2,7 @@
     setup
     lang="ts"
 >
-import { computed } from "vue";
+import { computed, useAttrs } from "vue";
 import { RouterLink, type RouteLocationRaw } from "vue-router";
 
 type IProps = {
@@ -53,6 +53,8 @@ const BUTTON_COLORS = {
 const Component = computed(() => {
     return props.to ? RouterLink : "button";
 });
+
+const attrs = useAttrs();
 </script>
 
 <template>
@@ -60,10 +62,12 @@ const Component = computed(() => {
         :is="Component"
         :to="props.to || null"
         :class="{
+            'ui-button': true,
             'relative inline-flex items-center justify-center grow-0 shrink-0 basis-auto cursor-pointer': true,
             'px-4 py-2 rounded-sm uppercase font-bold': Boolean($slots.default),
             [`${BUTTON_COLORS[props.variant][props.colors]} transition`]: Boolean($slots.default),
             'border-2': props.variant === 'secondary',
+            'ui-button--disabled': 'disabled' in attrs,
         }"
     >
         <span class="inline-flex items-center gap-1">
@@ -84,3 +88,9 @@ const Component = computed(() => {
         </span>
     </component>
 </template>
+
+<style>
+.ui-button.ui-button--disabled {
+    @apply pointer-events-none opacity-[0.55] grayscale-[0.3] cursor-not-allowed;
+}
+</style>

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import ClipboardEntry from "@/components/clipboard/ClipboardEntry.vue";
-import UiButton from "@/components/buttons/UiButton.vue";
 
 const userName = ref("John Doe");
 const lastClipboardEntries = ref([
