@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
+import UiIcon from "../icons/UiIcon.vue";
 
 const props = defineProps<{
     content: string
@@ -19,10 +20,10 @@ const deleteEntry = () => {
 
 <template>
     <div class="flex flex-col">
-        <div>
+        <div class="flex-1">
             <textarea
                 v-model="entry"
-                class="bg-white dark:bg-black text-slate-950 disabled:text-slate-600 resize-vertical disabled:resize-none"
+                class="w-full bg-white dark:bg-black text-slate-950 disabled:text-slate-600 resize-vertical disabled:resize-none"
                 :disabled="!isEditing"
             ></textarea>
         </div>
@@ -39,7 +40,7 @@ const deleteEntry = () => {
                 type="button"
                 @click="() => copyToClipboard()"
             >
-                Copy
+                <UiIcon icon-name="content-copy" />
             </button>
 
             <button
