@@ -16,7 +16,7 @@ const lastClipboardEntries = ref([
 
 <template>
     <section>
-        <h2>
+        <h2 class="">
             Welcome {{ userName }}!
         </h2>
 

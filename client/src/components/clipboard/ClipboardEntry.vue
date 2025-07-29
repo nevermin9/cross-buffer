@@ -19,7 +19,7 @@ const deleteEntry = () => {
 </script>
 
 <template>
-    <div class="flex flex-col rounded-xl bg-white dark:bg-black">
+    <div class="flex flex-col rounded-xl bg-white dark:bg-gray-800">
         <div class="flex-1">
             <textarea
                 v-model="entry"

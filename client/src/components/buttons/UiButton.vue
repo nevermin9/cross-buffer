@@ -62,7 +62,7 @@ const Component = computed(() => {
         :class="{
             'relative inline-flex items-center justify-center grow-0 shrink-0 basis-auto cursor-pointer': true,
             'px-4 py-2 rounded-sm uppercase font-bold': Boolean($slots.default),
-            [`${BUTTON_COLORS[props.variant][props.colors]}`]: Boolean($slots.default),
+            [`${BUTTON_COLORS[props.variant][props.colors]} transition`]: Boolean($slots.default),
             'border-2': props.variant === 'secondary',
         }"
     >

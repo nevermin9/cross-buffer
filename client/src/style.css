@@ -11,7 +11,7 @@ html {
     font-size: 16px;
     line-height: 1.5;
 
-    @apply bg-white dark:bg-gray-900;
+    @apply bg-white dark:bg-gray-900 text-gray-900 dark:text-white;
 }
 
 body {
@@ -24,4 +24,32 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
+}
+
+
+/* transitions */
+.jump-up-leave-active,
+.jump-up-enter-active {
+  transition: all 0.4s cubic-bezier(.67,-0.18,.3,1.15);
+}
+
+.jump-up-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+.jump-up-leave-active {
+  animation: jump-up-leave 0.4s cubic-bezier(.67,-0.18,.3,1.15) forwards;
+}
+@keyframes jump-up-leave {
+  0%   { transform: translateY(0); opacity: 1; }
+  20%  { transform: translateY(10px); opacity: 1; }
+  100% { transform: translateY(-40px); opacity: 0; }
+}
+.jump-up-enter-from {
+  opacity: 0;
+  transform: translateY(40px);
+}
+.jump-up-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }

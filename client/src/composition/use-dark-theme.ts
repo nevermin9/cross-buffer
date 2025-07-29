@@ -1,7 +1,7 @@
 import { useBrowserStorageModel } from "@/composition/use-browser-storage";
 
-const DARK_THEME = "dark";
-const DEFAULT_THEME = "light";
+export const DARK_THEME_KEY = "dark";
+const DEFAULT_THEME_KEY = "light";
 
 export const useDarkTheme = () => {
     const { model: currentTheme } = useBrowserStorageModel<"dark" | "light">(
@@ -18,16 +18,16 @@ export const useDarkTheme = () => {
         if (currentTheme.value) {
             document.documentElement.classList.toggle(currentTheme.value, true);
         } else if (isSystemDark) {
-            document.documentElement.classList.toggle(DARK_THEME, true);
+            document.documentElement.classList.toggle(DARK_THEME_KEY, true);
         }
     };
 
     const toggleTheme = () => {
         const current = currentTheme.value;
-        if (current === DARK_THEME) {
-            currentTheme.value = DEFAULT_THEME;
+        if (current === DARK_THEME_KEY) {
+            currentTheme.value = DEFAULT_THEME_KEY;
         } else {
-            currentTheme.value = DARK_THEME;
+            currentTheme.value = DARK_THEME_KEY;
         }
         if (current) {
             document.documentElement.classList.remove(current);
